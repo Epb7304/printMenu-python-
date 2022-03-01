@@ -1,0 +1,7 @@
+def PrintMenu(text,gap = 1,label = -1):
+    if gap == 1: print('\n'*40)
+    for i in range(len(text)): 
+        if type(text[i]) == str: text[i] = [text[i]]
+        x = (' [VARn] VAR0').replace('VARn',str(i-label+1)) if label != -1 and i-label >= 0 else ' VAR0'
+        for j in range(len(text[i])): x = x.replace(('VARn').replace('n',str(j)),str(text[i][j]))
+        print(x)
